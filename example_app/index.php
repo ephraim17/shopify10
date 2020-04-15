@@ -65,7 +65,7 @@ foreach ($theme as $curr_theme) {
 $script_array = array(
  	"script_tag" => array(
  	"event" => "onload",
- 	"src" => "https://shopifyapp10.herokuapp.com/example_app/scripts/shopify.js"
+ 	"src" => "https://shopifyapp10.herokuapp.com/example_app/scripts/script.js"
  )
 );
 
