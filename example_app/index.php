@@ -28,7 +28,7 @@ foreach ($collects as $collect) {
 		$products = json_decode($products['response'], JSON_PRETTY_PRINT);
 
 		$images = shopify_call($token, $shop, "/admin/api/2020-04/products/" . $value['product_id'] . "/images.json", array(), "GET");
-		$images = json_decode($products['response'], JSON_PRETTY_PRINT);
+		$images = json_decode($images['response'], JSON_PRETTY_PRINT);
 
 
 		 $image = $images['images']['src'];
