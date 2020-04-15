@@ -1,1 +1,3 @@
-document.write("Hello from India");
+jQuery(document).ready(function() {
+	console.log('Thanks for reading WeeklyHow\'s Tutorials!');
+});
