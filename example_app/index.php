@@ -55,12 +55,25 @@ foreach ($theme as $curr_theme) {
    				)
 			);
 
-			$assets = shopify_call($token, $shop, "/admin/api/2020-04/themes/" . $value['id'] . "/assets.json", array(), "PUT");
+			$assets = shopify_call($token, $shop, "/admin/api/2020-04/themes/" . $value['id'] . "/assets.json", $array, "PUT");
 		    $assets = json_decode($assets['response'], JSON_PRETTY_PRINT);
 
 		}
 	}
 }
+
+
+
+$script_array = array(
+ 	"script_tag" => array(
+ 	"event" => "onload",
+ 	"src" => "https://shopifyapp10.herokuapp.com/example_app/scripts/script.js"
+ )
+);
+
+$scriptTag = shopify_call($token, $shop, "/admin/api/2020-04/script_tags.json", $array, "POST");
+$scriptTag = json_decode($scriptTag['response'], JSON_PRETTY_PRINT);
+
 
 
 
