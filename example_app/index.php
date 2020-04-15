@@ -34,9 +34,28 @@ foreach ($collects as $collect) {
 		 $image = $images['images'][0]['src'];
          $title = $products['product']['title'];
 
+	}
+}
 
 
+foreach ($theme as $curr_theme) {
+	foreach($curr_theme as $key => $value) {
+		if($value['role'] === 'main') {
 
+			echo "Theme ID: " . $value['id'] . "<br/>";
+			echo "Theme Name: " . $value['name'] . "<br/>";
+
+			$array = array(
+   				"asset" => array(
+ 					"key" => "templates/index.liquid",
+ 					"value" => "Hello Wordl from WeeklyHow"
+   				)
+			);
+
+			$assets = shopify_call($token, $shop, "/admin/api/2020-04/themes/" . $value['id'] . "/assets.json", array(), "PUT");
+		    $assets = json_decode($assets['response'], JSON_PRETTY_PRINT);
+
+		}
 	}
 }
 
