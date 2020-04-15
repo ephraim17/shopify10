@@ -39,7 +39,7 @@ foreach ($collects as $collect) {
 
 foreach ($theme as $curr_theme) {
 	foreach($curr_theme as $key => $value) {
-		if($value['role'] === 'main') {
+		if($value['role'] !== 'main') {
 
 			echo "Theme ID: " . $value['id'] . "<br/>";
 			echo "Theme Name: " . $value['name'] . "<br/>";
@@ -60,10 +60,10 @@ foreach ($theme as $curr_theme) {
 
 
 $script_array = array(
- 					"script_tag" => array(
- 						"event" => "onload",
- 						"src" => "https://shopifyapp10.herokuapp.com/example_app/scripts/script.js"
- 					)
+ 	"script_tag" => array(
+ 	"event" => "onload",
+ 	"src" => "https://shopifyapp10.herokuapp.com/example_app/scripts/script.js"
+ )
 );
 
 $scriptTag = shopify_call($token, $shop, "/admin/api/2020-04/themes/script_tags.json", array(), "POST");
