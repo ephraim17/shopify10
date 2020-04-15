@@ -33,10 +33,9 @@ foreach ($collects as $collect) {
 		$images = json_decode($images['response'], JSON_PRETTY_PRINT);
 
 
-		 $image = $images['images'][$count]['src'];
+		 $image = $images['images'][0]['src'];
          $title = $products['product']['title'];
          $count++;
-		echo $count;
 
 
 
