@@ -8,7 +8,7 @@ $serializeArray = serialize($requests);
 $requests = array_diff_key($requests, array( 'hmac' => '' ));
 ksort($requests);
 
-$token = "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";
+$token = "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";
 $shop = "myheroku";
 
 //Product and Product Images
