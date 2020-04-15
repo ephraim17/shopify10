@@ -33,7 +33,6 @@ foreach ($collects as $collect) {
          
 		 $image = $images['images'][0]['src'];
          $title = $products['product']['title'];
-         $id = $products['product']['title'];
 
 
 
@@ -52,6 +51,6 @@ foreach ($collects as $collect) {
  <body>
  	<h1>Shopify Example App</h1>
  	<img src="<?php echo $image; ?>" style="width:250px;">
- 	<p><?php echo $title . "(" . $id . ")" ?></p>
+ 	<p><?php echo $title; ?></p>
  </body>
  </html>
