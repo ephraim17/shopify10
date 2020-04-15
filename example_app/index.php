@@ -22,6 +22,8 @@ $collection_id = $collectionList['custom_collections'][0]['id'];
 $collects = shopify_call($token, $shop, "/admin/api/2020-04/collects.json", array("collection_id"=>$collection_id), "GET");
 $collects = json_decode($collects['response'], JSON_PRETTY_PRINT);
 
+$count = 0;
+
 foreach ($collects as $collect) {
 	foreach($collect as $key => $value) {
 		$products = shopify_call($token, $shop, "/admin/api/2020-04/products/" . $value['product_id'] . ".json", array(), "GET");
@@ -31,8 +33,9 @@ foreach ($collects as $collect) {
 		$images = json_decode($images['response'], JSON_PRETTY_PRINT);
 
 
-		 $image = $images['images'][$key]['src'];
+		 $image = $images['images'][$count]['src'];
          $title = $products['product']['title'];
+         $count++;
 
 
 
