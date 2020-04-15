@@ -31,8 +31,8 @@ foreach ($collects as $collect) {
 		$images = json_decode($products['response'], JSON_PRETTY_PRINT);
 
 
-		 $image = $images['product']['title'] . '<br/>';
-         $title = $products['product']['title'] . '<br/>';
+		 $image = $images['product']['title'];
+                 $title = $products['product']['title'];
 
 
 
