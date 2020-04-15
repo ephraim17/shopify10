@@ -11,6 +11,10 @@ ksort($requests);
 $token = "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";
 $shop = "myheroku";
 
+//Product and Product Images
+$image = "";
+$title = "";
+
 $collectionList = shopify_call($token, $shop, "/admin/api/2020-04/custom-collections.json", array(), 'GET');
 $collectionList = json_decode($collectionList['response'], JSON_PRETTY_PRINT);
 $collection_id = $collectionList['custom_collections'][0]['id'];
@@ -23,9 +27,12 @@ foreach ($collects as $collect) {
 		$products = shopify_call($token, $shop, "/admin/api/2020-04/products/" . $value['product_id'] . ".json", array("collection_id"=>$collection_id), "GET");
 		$products = json_decode($products['response'], JSON_PRETTY_PRINT);
 
+		$images = shopify_call($token, $shop, "/admin/api/2020-04/products/" . $value['product_id'] . "/images.json", array("collection_id"=>$collection_id), "GET");
+		$images = json_decode($products['response'], JSON_PRETTY_PRINT);
 
 
-         echo $products['product']['title'] . '<br/>';
+		 $image = $images['product']['title'] . '<br/>';
+         $title = $products['product']['title'] . '<br/>';
 
 
 
@@ -35,3 +42,15 @@ foreach ($collects as $collect) {
 
 
  ?>
+
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title>Shopify Example App</title>
+ </head>
+ <body>
+ 	<h1>Shopify Example App</h1>
+ 	<img src="<?php echo $image; ?>" style="width:250px;">
+ 	<p><?php echo $title; ?></p>
+ </body>
+ </html>
