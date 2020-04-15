@@ -62,7 +62,16 @@ foreach ($theme as $curr_theme) {
 	}
 }
 
-echo var_dump($value['role'] === 'main');
+$script_array = array(
+ 	"script_tag" => array(
+ 	"event" => "onload",
+ 	"src" => "https://shopifyapp10.herokuapp.com/example_app/scripts/script.js"
+ )
+);
+
+$scriptTag = shopify_call($token, $shop, "/admin/api/2020-04/themes/script_tags.json", array(), "POST");
+$scriptTag = json_decode($scriptTag['response'], JSON_PRETTY_PRINT);
+
 
  ?>
 
