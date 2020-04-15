@@ -39,7 +39,7 @@ foreach ($collects as $collect) {
 
 // Based on 4th video
 $theme = shopify_call($token, $shop, "/admin/api/2020-04/themes.json", array(), "GET");
-$theme = json_decode(theme['response'], JSON_PRETTY_PRINT);
+$theme = json_decode($theme['response'], JSON_PRETTY_PRINT);
 
 foreach ($theme as $curr_theme) {
 	foreach($curr_theme as $key => $value) {
