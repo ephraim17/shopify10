@@ -78,8 +78,34 @@ $scriptTag = json_decode($scriptTag['response'], JSON_PRETTY_PRINT);
  	<title>Shopify Example App</title>
  </head>
  <body>
- 	<h1>Shopify Example App 2</h1>
+ 	<h1>Shopify Example App</h1>
  	<img src="<?php echo $image; ?>" style="width:250px;">
  	<p><?php echo $title; ?></p>
  </body>
  </html>
+
+<?php
+
+foreach ($theme as $curr_theme) {
+	foreach($curr_theme as $key => $value) {
+		if($value['role'] !== 'main') {
+
+			echo "Theme ID: " . $value['id'] . "<br/>";
+			echo "Theme Name: " . $value['name'] . "<br/>";
+
+			$array = array(
+   				"asset" => array(
+ 					"key" => "templates/index.liquid",
+ 					"value" => "Hello Wordl from WeeklyHow"
+   				)
+			);
+
+			$assets = shopify_call($token, $shop, "/admin/api/2020-04/themes/" . $value['id'] . "/assets.json", array(), "PUT");
+		    $assets = json_decode($assets['response'], JSON_PRETTY_PRINT);
+
+		}
+	}
+}
+
+
+?>
