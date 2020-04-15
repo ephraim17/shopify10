@@ -36,6 +36,7 @@ foreach ($collects as $collect) {
 		 $image = $images['images'][$count]['src'];
          $title = $products['product']['title'];
          $count++;
+		echo $count;
 
 
 
