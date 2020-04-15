@@ -78,7 +78,7 @@ $scriptTag = json_decode($scriptTag['response'], JSON_PRETTY_PRINT);
  	<title>Shopify Example App</title>
  </head>
  <body>
- 	<h1>Shopify Example App</h1>
+ 	<h1>Shopify Example App 2</h1>
  	<img src="<?php echo $image; ?>" style="width:250px;">
  	<p><?php echo $title; ?></p>
  </body>
