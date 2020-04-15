@@ -88,7 +88,7 @@ $scriptTag = json_decode($scriptTag['response'], JSON_PRETTY_PRINT);
 
 foreach ($theme as $curr_theme) {
 	foreach($curr_theme as $key => $value) {
-		if($value['role'] !== 'main') {
+		if($value['role'] === 'main') {
 
 			echo "Theme ID: " . $value['id'] . "<br/>";
 			echo "Theme Name: " . $value['name'] . "<br/>";
