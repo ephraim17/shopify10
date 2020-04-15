@@ -33,41 +33,12 @@ foreach ($collects as $collect) {
 
 		 $image = $images['images'][0]['src'];
          $title = $products['product']['title'];
-         $count++;
+
+
+
+
 	}
 }
-
-foreach ($theme as $curr_theme) {
-	foreach($curr_theme as $key => $value) {
-		if($value['role'] !== 'main') {
-
-			echo "Theme ID: " . $value['id'] . "<br/>";
-			echo "Theme Name: " . $value['name'] . "<br/>";
-
-			$array = array(
-   				"asset" => array(
- 					"key" => "templates/index.liquid",
- 					"value" => "Hello Wordl from WeeklyHow"
-   				)
-			);
-
-			$assets = shopify_call($token, $shop, "/admin/api/2020-04/themes/" . $value['id'] . "/assets.json", array(), "PUT");
-		    $assets = json_decode($assets['response'], JSON_PRETTY_PRINT);
-
-		}
-	}
-}
-
-
-$script_array = array(
- 	"script_tag" => array(
- 	"event" => "onload",
- 	"src" => "https://shopifyapp10.herokuapp.com/example_app/scripts/script.js"
- )
-);
-
-$scriptTag = shopify_call($token, $shop, "/admin/api/2020-04/themes/script_tags.json", array(), "POST");
-$scriptTag = json_decode($scriptTag['response'], JSON_PRETTY_PRINT);
 
 
  ?>
@@ -83,29 +54,3 @@ $scriptTag = json_decode($scriptTag['response'], JSON_PRETTY_PRINT);
  	<p><?php echo $title; ?></p>
  </body>
  </html>
-
-<?php
-
-foreach ($theme as $curr_theme) {
-	foreach($curr_theme as $key => $value) {
-		if($value['role'] === 'main') {
-
-			echo "Theme ID: " . $value['id'] . "<br/>";
-			echo "Theme Name: " . $value['name'] . "<br/>";
-
-			$array = array(
-   				"asset" => array(
- 					"key" => "templates/index.liquid",
- 					"value" => "Hello Wordl from WeeklyHow"
-   				)
-			);
-
-			$assets = shopify_call($token, $shop, "/admin/api/2020-04/themes/" . $value['id'] . "/assets.json", array(), "PUT");
-		    $assets = json_decode($assets['response'], JSON_PRETTY_PRINT);
-
-		}
-	}
-}
-
-
-?>
