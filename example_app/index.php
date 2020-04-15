@@ -24,10 +24,10 @@ $collects = json_decode($collects['response'], JSON_PRETTY_PRINT);
 
 foreach ($collects as $collect) {
 	foreach($collect as $key => $value) {
-		$products = shopify_call($token, $shop, "/admin/api/2020-04/products/" . $value['product_id'] . ".json", array("collection_id"=>$collection_id), "GET");
+		$products = shopify_call($token, $shop, "/admin/api/2020-04/products/" . $value['product_id'] . ".json", array(), "GET");
 		$products = json_decode($products['response'], JSON_PRETTY_PRINT);
 
-		$images = shopify_call($token, $shop, "/admin/api/2020-04/products/" . $value['product_id'] . "/images.json", array("collection_id"=>$collection_id), "GET");
+		$images = shopify_call($token, $shop, "/admin/api/2020-04/products/" . $value['product_id'] . "/images.json", array(), "GET");
 		$images = json_decode($products['response'], JSON_PRETTY_PRINT);
 
 
