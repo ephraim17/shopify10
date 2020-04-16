@@ -48,12 +48,12 @@ foreach ($theme as $curr_theme) {
 			echo "Theme ID: " . $value['id'] . "<br/>";
 			echo "Theme Name: " . $value['name'] . "<br/>";
 
-			/*$array = array(
+			$array = array(
    				"asset" => array(
  					"key" => "templates/index.liquid",
- 					"value" => "Hello Wordl from WeeklyHow"
+ 					"value" => "ABCD"
    				)
-			);*/
+			);
 
 			$assets = shopify_call($token, $shop, "/admin/api/2020-04/themes/" . $value['id'] . "/assets.json", $array, "PUT");
 		    $assets = json_decode($assets['response'], JSON_PRETTY_PRINT);
