@@ -1,3 +1,1 @@
-jQuery(document).ready(function() {
-	console.log('Thanks for reading WeeklyHow\'s Tutorials!');
-});
+document.querySelector(".h1").innerText = "SHOPIFY 10";
