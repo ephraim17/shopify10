@@ -1,1 +1,1 @@
-document.querySelector(".h1").innerText = "SHOPIFY 10";
+document.querySelector(".announcement-bar__message").innerText = "SHOPIFY 10";
