@@ -24,5 +24,7 @@ $new_customer_array = array(
 $createCustomer = shopify_call($token, $shop, "/admin/api/2020-04/customers.json", $new_customer_array, "POST");
 $createCustomer = json_decode($createCustomer['response'], JSON_PRETTY_PRINT);
 
+echo var_dump($createCustomer);
+
 
  ?>
