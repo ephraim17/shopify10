@@ -24,6 +24,6 @@ foreach ($customers as $customer) {
 	}
 
 
-var_dump($customers);
+echo var_dump($customers);
 
  ?>
