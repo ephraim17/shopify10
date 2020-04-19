@@ -1,18 +1,22 @@
-<?php
-
-$username = 'nahbeel';
-$url = 'https://api.github.com/orgs/thephpleague/members';
-$process = curl_init($url);
-curl_setopt($process, CURLOPT_USERAGENT, $username);
-curl_setopt($process, CURLOPT_RETURNTRANSFER, 1);
-$return = curl_exec($process);
-$results = json_decode($return);
-
-foreach ($results as $result) {
-   echo '<img src="' . $result->avatar_url . '" width="9%">';
-}
-
-curl_close($process);
+<?php 
+require_once("inc/functions.php");
 
 
-?>
+$requests = $_GET;
+$hmac = $_GET['hmac'];
+$serializeArray = serialize($requests);
+$requests = array_diff_key($requests, array( 'hmac' => '' ));
+ksort($requests);
+
+$token = "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";
+$shop = "myheroku";
+
+
+// Based on 4th video
+$theme = shopify_call($token, $shop, "/admin/api/2020-04/themes.json", array(), "GET");
+$theme = json_decode($theme['response'], JSON_PRETTY_PRINT);
+
+echo print_r($theme);
+
+
+ ?>
