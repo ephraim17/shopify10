@@ -20,12 +20,11 @@ foreach ($customers as $customer) {
 	foreach($customer as $key => $value) {
 
 			echo "Theme ID: " . $value['id'] . "<br/>";
-			echo "Theme Name: " . $value['name'] . "<br/>";
 
 		}
 	}
 }
 
-print_r($customers);
+var_dump($customers);
 
  ?>
