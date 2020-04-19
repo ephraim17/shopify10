@@ -8,26 +8,19 @@ $serializeArray = serialize($requests);
 $requests = array_diff_key($requests, array( 'hmac' => '' ));
 ksort($requests);
 
-$token = "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";
+$token = "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";
 $shop = "myheroku";
 
-// Based on 4th video
-$customers = shopify_call($token, $shop, "/admin/api/2020-04/customers.json", array(), "GET");
-$customers = json_decode($customers['response'], JSON_PRETTY_PRINT);
 
-foreach ($customers as $customer) {
-	foreach($customer as $key => $value) {
-		
-?>
+$new_customer_array = array(
+ 	"first_name" => "Rishab",
+ 	"last_name" => "Kv",
+ 	"email" => "krishab7866565@gmail.com",
+ 	"phone" => "15142546011",
+);
 
-<ul>
-	<li><a href="customer.php?id=<?php echo $value[id] ?>"><?php echo $value[first_name] . ' ' . $value[last_name]; ?></a><br/>
-	<small><?php echo $value[email]; ?></small></li>
-</ul>
+$createCustomer = shopify_call($token, $shop, "/admin/api/2020-04/customers.json", $new_customer_array, "POST");
+$createCustomer = json_decode($createCustomer['response'], JSON_PRETTY_PRINT);
 
-	
-<?php
-		}
-	}
 
  ?>
