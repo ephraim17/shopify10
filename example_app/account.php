@@ -17,7 +17,7 @@ $new_customer_array = array(
     "first_name" => "Rishab",
  	  "last_name" => "Kv",
  	  "email" => "krishab7866565@gmail.com",
- 	  "phone" => "15142546011",
+ 	  "phone" => null,
   )
 );
 
