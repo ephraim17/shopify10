@@ -21,7 +21,8 @@ foreach ($customers as $customer) {
 ?>
 
 <ul>
-	<li><?php echo $value[first_name] . $value[last_name]; ?><br/>Ha</li>
+	<li><a href="customer.php?id=<?php echo $value[id] ?>"><?php echo $value[first_name] . ' ' . $value[last_name]; ?></a><br/>
+	<small><?php echo $value[email]; ?></small></li>
 </ul>
 
 	
