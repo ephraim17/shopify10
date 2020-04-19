@@ -18,12 +18,9 @@ $customers = json_decode($customers['response'], JSON_PRETTY_PRINT);
 foreach ($customers as $customer) {
 	foreach($customer as $key => $value) {
 
-			echo "Theme ID: " . $value['id'] . "<br/>";
+			echo "Customer Name: " . $value['id'] . "<br/>";
 
 		}
 	}
-
-
-echo var_dump($customers);
 
  ?>
