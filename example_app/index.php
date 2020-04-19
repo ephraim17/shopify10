@@ -19,8 +19,6 @@ foreach ($customers as $customer) {
 	foreach($customer as $key => $value) {
 		
 ?>
-
-<?php
 		
  <div class="Polaris-ResourceList-Item__Container" id="<?php echo $value['id']; ?>">
   <div class="Polaris-ResourceList-Item__Owned">
@@ -36,6 +34,8 @@ foreach ($customers as $customer) {
     </div>
   </div>
 </div>
+
+<?php
 		}
 	}
 
