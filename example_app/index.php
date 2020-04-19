@@ -16,7 +16,7 @@ $shop = "myheroku";
 $theme = shopify_call($token, $shop, "/admin/api/2020-04/themes.json", array(), "GET");
 $theme = json_decode($theme['response'], JSON_PRETTY_PRINT);
 
-echo var_dump($theme[0]);
+echo print_r($theme);
 
 
  ?>
