@@ -23,7 +23,7 @@ foreach ($customers as $customer) {
 		}
 	}
 
-echo 'code is active';
 
+echo $customers[0];
 
  ?>
