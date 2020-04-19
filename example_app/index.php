@@ -13,17 +13,14 @@ $shop = "myheroku";
 
 
 // Based on 4th video
-$theme = shopify_call($token, $shop, "/admin/api/2020-04/themes.json", array(), "GET");
-$theme = json_decode($theme['response'], JSON_PRETTY_PRINT);
+$customers = shopify_call($token, $shop, "/admin/api/2020-04/customers.json", array(), "GET");
+$customers = json_decode($customers['response'], JSON_PRETTY_PRINT);
 
-foreach ($theme as $curr_theme) {
-	foreach($curr_theme as $key => $value) {
-		if($value['role'] === 'main') {
+foreach ($customers as $customer) {
+	foreach($customer as $key => $value) {
 
-			echo "Theme ID: " . $value['id'] . "<br/>";
-			echo "Theme Name: " . $value['name'] . "<br/>";
+			echo $value['name'] . "<br/>";
 
-		}
 	}
 }
 
