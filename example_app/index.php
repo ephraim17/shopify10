@@ -26,5 +26,6 @@ foreach ($customers as $customer) {
 	}
 }
 
+print_r($customers);
 
  ?>
