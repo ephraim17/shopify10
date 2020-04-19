@@ -25,6 +25,8 @@ foreach ($customers as $customer) {
 	<small><?php echo $value[email]; ?></small></li>
 </ul>
 
+<a href="account.php">Create an account</a>
+
 	
 <?php
 		}
